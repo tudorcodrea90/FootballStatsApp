@@ -1,0 +1,466 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backgroundfootball"
+        android:orientation="vertical"
+        tools:context="com.example.android.footballscorecounter.MainActivity">
+
+
+        <ImageView
+            style="@style/CompetitionLogo"
+            android:src="@drawable/uclbanner"
+            android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:id="@+id/block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--Team A section-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+
+                    <TextView style="@style/Select_text"
+                        android:layout_height="wrap_content" />
+
+
+                    <Spinner
+                        android:id="@+id/teamA_spinner"
+                        style="@style/Spinner" />
+
+
+                    <ImageView
+                        android:id="@+id/teamA_image"
+                        style="@style/image_view"
+                        android:src="@drawable/bayern" />
+                    <!--GOAL SECTION-->
+                    <TextView style="@style/text_main" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_a_score"
+                            style="@style/text_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/ball"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_a_score"
+                            android:onClick="goalMinus_TeamA" />
+
+
+
+                        <ImageButton
+                            android:src="@drawable/ball"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_a_score"
+                            android:onClick="goalAdd_TeamA"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <!--FOUL SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/foul" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_a_foul"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/fool"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_a_foul"
+                            android:onClick="foulMinus_TeamA" />
+
+
+                        <ImageButton
+                            android:src="@drawable/fool"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_a_foul"
+                            android:onClick="foulAdd_TeamA" />
+
+
+                    </RelativeLayout>
+
+                    <!--FREEKICK SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/freeKick" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_Afreekick"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/freekick"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_Afreekick"
+                            android:onClick="freekickMinus_TeamA" />
+
+
+                        <ImageButton
+                            android:src="@drawable/freekick"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_Afreekick"
+                            android:onClick="freekickAdd_TeamA" />
+
+                    </RelativeLayout>
+                    <!--CORNER SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/corner" />
+
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_a_corner"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/corner"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_a_corner"
+                            android:onClick="cornerMinus_TeamA"/>
+
+
+                        <ImageButton
+                            android:src="@drawable/corner"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_a_corner"
+                            android:onClick="cornerAdd_TeamA"/>
+                    </RelativeLayout>
+
+                    <!--YELLOW CARD SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/yellowcard" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_a_yellowcard"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/yellow"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_a_yellowcard"
+                            android:onClick="yellowcardMinus_TeamA" />
+
+
+                        <ImageButton
+                            android:src="@drawable/yellow"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_a_yellowcard"
+                            android:onClick="yellowcardAdd_TeamA" />
+
+                    </RelativeLayout>
+
+                    <!--RED CARD SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/redcard" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_a_redcard"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/redcard"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_a_redcard"
+                            android:onClick="redcardMinus_TeamA" />
+
+
+                        <ImageButton
+                            android:src="@drawable/redcard"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_a_redcard"
+                            android:onClick="redcardAdd_TeamA"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray">
+
+                </View>
+
+                <!--Team B Section-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+
+                    <TextView style="@style/Select_text" />
+
+
+                    <Spinner
+                        android:id="@+id/teamB_spinner"
+                        style="@style/Spinner" />
+
+
+                    <ImageView
+                        android:id="@+id/teamB_image"
+                        style="@style/image_view"
+                        android:src="@drawable/monaco" />
+
+                    <!--GOAL SECTION-->
+                    <TextView style="@style/text_main" />
+
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_b_score"
+                            style="@style/text_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/ball"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_b_score"
+                            android:onClick="goalMinus_TeamB" />
+
+
+
+                        <ImageButton
+                            android:src="@drawable/ball"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_b_score"
+                            android:onClick="goalAdd_TeamB"
+                            />
+                    </RelativeLayout>
+                    <!--FOUL SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/foul" />
+
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_b_foul"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/fool"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_b_foul"
+                            android:onClick="foulMinus_TeamB" />
+
+
+                        <ImageButton
+                            android:src="@drawable/fool"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_b_foul"
+                            android:onClick="foulAdd_TeamB" />
+                    </RelativeLayout>
+
+                    <!--FREEKICK SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/freeKick" />
+
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_Bfreekick"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/freekick"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_Bfreekick"
+                            android:onClick="freekickMinus_TeamB" />
+
+
+                        <ImageButton
+                            android:src="@drawable/freekick"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_Bfreekick"
+                            android:onClick="freekickAdd_TeamB" />
+
+                    </RelativeLayout>
+                    <!--CORNER SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/corner" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_b_corner"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/corner"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_b_corner"
+                            android:onClick="cornerMinus_TeamB"/>
+
+
+                        <ImageButton
+                            android:src="@drawable/corner"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_b_corner"
+                            android:onClick="cornerAdd_TeamB"/>
+                    </RelativeLayout>
+
+                    <!--YELLOW CARD SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/yellowcard" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_b_yellowcard"
+                            style="@style/text_sub_score" />
+
+
+                        <ImageButton
+                            android:src="@drawable/yellow"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_b_yellowcard"
+                            android:onClick="yellowcardMinus_TeamB" />
+
+
+                        <ImageButton
+                            android:src="@drawable/yellow"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_b_yellowcard"
+                            android:onClick="yellowcardAdd_TeamB" />
+                    </RelativeLayout>
+
+
+                    <!--RED CARD SECTION-->
+                    <TextView
+                        style="@style/sub_text_main"
+                        android:text="@string/redcard"/>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/team_b_redcard"
+                            style="@style/text_sub_score"/>
+
+
+                        <ImageButton
+                            android:src="@drawable/redcard"
+                            style="@style/Minus_button"
+                            android:layout_toLeftOf="@id/team_b_redcard"
+                            android:onClick="redcardMinus_TeamB" />
+
+
+                        <ImageButton
+                            android:src="@drawable/redcard"
+                            style="@style/Add_button"
+                            android:layout_toRightOf="@id/team_b_redcard"
+                            android:onClick="redcardAdd_TeamB"/>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    style="@style/Reset_button"
+                    android:onClick="reset" />
+
+            </RelativeLayout>
+        </LinearLayout>
+</ScrollView>
+

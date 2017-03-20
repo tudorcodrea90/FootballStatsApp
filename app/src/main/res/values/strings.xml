@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Football Score Counter</string>
+    <string name="spinner_title">Select Team</string>
+    <string name="text_score">0</string>
+    <string name="goal">Goal</string>
+    <string name="Minus">-</string>
+    <string name="Plus">+</string>
+    <string name="freeKick">Freekick</string>
+    <string name="foul">Foul</string>
+    <string name="yellow">YellowCard</string>
+    <string name="red">RedCard</string>
+    <string name="corner">Corner</string>
+    <string name="yellowcard">Yellow Card</string>
+    <string name="redcard">Red Card</string>
+    <string name="reset">reset</string>
+
+    <string-array name="team_list">
+        <item>Bayern</item>
+        <item>Monaco</item>
+        <item>RealMadrid</item>
+        <item>Barcelona</item>
+        <item>Atletico</item>
+        <item>Leicester</item>
+        <item>Borussia Dortmund</item>
+        <item>Juventus</item>
+
+    </string-array>
+
+    <integer-array name="team_flag_list">
+        <item>@drawable/bayern</item>
+        <item>@drawable/monaco</item>
+        <item>@drawable/realmadridi</item>
+        <item>@drawable/barcelona</item>
+        <item>@drawable/atletico</item>
+        <item>@drawable/leicester</item>
+        <item>@drawable/bvb</item>
+        <item>@drawable/juventus</item>
+    </integer-array>
+</resources>
