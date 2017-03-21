@@ -376,7 +376,57 @@ public class MainActivity extends AppCompatActivity {
         displayCornerForTeamB(cornerTeamB);
         displayyelowcardteamB(yellowcardTeamB);
         displayredcardTeamB(redcardTeamB);
-
+    }
+    /**
+     * Save instance state. Keeps data after screen rotation.
+     */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("scoreTeamA", scoreTeamA);
+        savedInstanceState.putInt("scoreTeamB", scoreTeamB);
+        savedInstanceState.putInt("foulTeamA", foulTeamA);
+        savedInstanceState.putInt("foolTeamB", foulTeamB);
+        savedInstanceState.putInt("freekickTeamA", freekickTeamA);
+        savedInstanceState.putInt("freekickTeamB", freekickTeamB);
+        savedInstanceState.putInt("cornerTeamA", cornerTeamA);
+        savedInstanceState.putInt("cornerTeamB", cornerTeamB);
+        savedInstanceState.putInt("yellowcardTeamA", yellowcardTeamA);
+        savedInstanceState.putInt("yellowcardTeamB", yellowcardTeamB);
+        savedInstanceState.putInt("redcardTeamA", redcardTeamA);
+        savedInstanceState.putInt("redcardTeamB", redcardTeamB);
 
     }
+    /**
+     * Restore instance state.
+     */
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreTeamA = savedInstanceState.getInt("scoreTeamA");
+        scoreTeamB = savedInstanceState.getInt("scoreTeamB");
+        foulTeamA = savedInstanceState.getInt("foulTeamA");
+        foulTeamB = savedInstanceState.getInt("foolTeamB");
+        freekickTeamA = savedInstanceState.getInt("freekickTeamA");
+        freekickTeamB = savedInstanceState.getInt("freekickTeamB");
+        cornerTeamA = savedInstanceState.getInt("cornerTeamA");
+        cornerTeamB = savedInstanceState.getInt("cornerTeamB");
+        yellowcardTeamA = savedInstanceState.getInt("yellowcardTeamA");
+        yellowcardTeamB = savedInstanceState.getInt("yellowcardTeamB");
+        redcardTeamA = savedInstanceState.getInt("redcardTeamA");
+        redcardTeamB = savedInstanceState.getInt("redcardTeamB");
+        displayGoalForTeamA(scoreTeamA);
+        displayGoalForTeamB(scoreTeamB);
+        displayFoulForTeamA(foulTeamA);
+        displayFoulForTeamB(foulTeamB);
+        displayfreekickForTeamA(freekickTeamA);
+        displayfreekickTeamB(freekickTeamB);
+        displayCornerForTeamA(cornerTeamA);
+        displayCornerForTeamB(cornerTeamB);
+        displayyellowcardTeamA(yellowcardTeamA);
+        displayyelowcardteamB(yellowcardTeamB);
+        displayredcardTeamA(redcardTeamA);
+        displayredcardTeamB(redcardTeamB);
+        
+        }
 }
